@@ -9,7 +9,7 @@ export default function Home() {
     <div className="relative w-full">
       <div className="pointer-events-none fixed inset-0 z-0">
         <video
-          src="/KulineranMerantauVideo.mov"
+          src="/KulineranMerantauVideo.mp4"
           autoPlay
           loop
           muted
@@ -22,7 +22,7 @@ export default function Home() {
       {/* Red — sticks, gets covered by blue */}
       <div
         ref={redRef}
-        className="sticky top-0 z-10 min-h-svh bg-red-600 p-8 text-white"
+        className="sticky top-0 z-10 min-h-svh bg-red-600 text-white"
       >
         <Introduction/>
       </div>
