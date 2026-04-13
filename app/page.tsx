@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import Introduction from "./components/Introduction";
 import Cards from "./components/Cards";
+import KaredokRecipe from "./components/KaredokRecipe";
 
 export default function Home() {
   const redRef = useRef<HTMLDivElement>(null);
@@ -31,8 +32,8 @@ export default function Home() {
         <Cards/>
       </div>
 
-      <div className="relative z-30 min-h-svh bg-green-600 p-8 text-white">
-        <p className="font-discordia">Green page content</p>
+      <div className="relative z-30 min-h-svh bg-green-600 text-white">
+        <KaredokRecipe/>
       </div>
     </div>
   );
