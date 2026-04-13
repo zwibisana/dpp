@@ -32,7 +32,7 @@ export default function Home() {
         <Cards/>
       </div>
 
-      <div className="relative z-30 min-h-svh bg-green-600 text-white">
+      <div className="relative z-30 min-h-svh text-white">
         <KaredokRecipe/>
       </div>
     </div>

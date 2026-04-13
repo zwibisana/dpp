@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 function Ingredients() {
   return (
     <div
-      className="content-stretch flex flex-col items-start relative shrink-0 w-full"
+      className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full"
       data-name="Ingredients"
     >
       <p className="font-discordia leading-[1.1] not-italic relative shrink-0 text-[16px] tracking-[4px] uppercase w-full">
@@ -144,7 +144,7 @@ function ScrollableInstructions({
 
   return (
     <div
-      className="bg-[#f9f7ea] flex-[1_0_0] h-screen min-h-px min-w-px ml-[300px] overflow-y-auto"
+      className="bg-[#f9f7ea] flex-[1_0_0] h-screen min-h-px min-w-px overflow-y-auto"
       data-name="SCROLLABLE INSTRUCTIONS"
       ref={scrollRef}
       onScroll={handleScroll}
@@ -165,39 +165,35 @@ export default function KaredokRecipe() {
     clientHeight: number,
   ) => {
     const scrollPercentage = scrollTop / (scrollHeight - clientHeight);
-    const additionalRotation = scrollPercentage * 360;
-    setRotation(-155.38 + additionalRotation);
+    setRotation(-155.38 + scrollPercentage * 360);
   };
 
   return (
     <div
-      className="content-stretch flex items-center relative size-full overflow-hidden"
+      className="content-stretch flex items-stretch relative size-full overflow-hidden"
       data-name="Karedok Recipe"
     >
       <FixedIngredients />
-      <ScrollableInstructions onScroll={handleScroll} />
-      <div
-        className="sticky flex h-[612.108px] items-center justify-center left-[935px] top-[68px] w-[653.947px] pointer-events-none z-20"
-        style={
-          {
-            "--transform-inner-width": 1200,
-            "--transform-inner-height": 19,
-          } as React.CSSProperties
-        }
-      >
+
+      {/* Scrollable area takes remaining width */}
+      <div className="relative flex-1 min-w-0">
+        <ScrollableInstructions onScroll={handleScroll} />
+
+        {/* Image is absolutely positioned over the scrollable panel */}
         <div
-          className="-scale-y-100 flex-none transition-transform duration-100"
-          style={{ transform: `rotate(${rotation}deg)` }}
+          className="absolute top-0 right-0 h-full pointer-events-none z-20 flex items-center justify-end pr-[40px]"
         >
           <div
-            className="h-[435.04px] relative w-[519.987px]"
-            data-name="FOOD IMAGE"
+            className="-scale-y-100 flex-none transition-transform duration-100"
+            style={{ transform: `rotate(${rotation}deg)` }}
           >
-            <img
-              alt=""
-              className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-              src="../public/Karedok.png"
-            />
+            <div className="object-cover w-[300px] h-[280px] relative" data-name="FOOD IMAGE">
+              <img
+                alt=""
+                className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+                src="Karedok.png"
+              />
+            </div>
           </div>
         </div>
       </div>
