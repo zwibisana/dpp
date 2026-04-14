@@ -3,14 +3,9 @@ import Lenis from "lenis";
 
 export default function SmoothScrollProvider() {
   useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
 
     return () => {
       lenis.destroy();

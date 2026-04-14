@@ -27,7 +27,7 @@ function Nav() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between leading-[1.1] not-italic px-[40px] py-[32px] relative text-[#f9f7ea] text-[18px] w-full whitespace-nowrap">
           <Logo />
-          <Navigation />
+          {/* <Navigation /> */}
         </div>
       </div>
     </div>

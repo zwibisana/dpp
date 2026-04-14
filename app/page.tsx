@@ -4,6 +4,7 @@ import Introduction from "./components/Introduction";
 import Cards from "./components/Cards";
 import KaredokRecipe from "./components/KaredokRecipe";
 import NasiGorengRecipe from "./components/NasiGorengRecipe";
+import KolakBijiSalakRecipe from "./components/KolakBijiSalakRecipe";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
 
 export default function Home() {
@@ -25,24 +26,30 @@ export default function Home() {
 
       <div
         ref={redRef}
-        className="sticky top-0 z-10 min-h-svh bg-red-600 text-white"
+        className="sticky top-0 z-10 h-full bg-red-600 text-white"
       >
-        <Introduction/>
+        <Introduction />
       </div>
 
-      <div className="sticky top-0 z-20 min-h-svh bg-[#E74822] text-white">
-        <Cards/>
+      {/* Cards scrolls normally */}
+      <div className="relative z-20 bg-[#E74822] text-white">
+        <Cards />
       </div>
 
-      <div className="relative top-0 z-30 min-h-svh text-white">
+      {/* KaredokRecipe sticks and slides up over Cards */}
+      <div className="sticky top-0 z-30 h-svh text-white">
         <KaredokRecipe />
       </div>
 
-      <div className="relative top-0 z-40 min-h-svh text-white">
+      <div className="sticky top-0 z-40 h-svh text-white">
         <NasiGorengRecipe />
       </div>
 
-      <SmoothScrollProvider/>
+      <div className="sticky top-0 z-50 h-svh text-white">
+        <KolakBijiSalakRecipe />
+      </div>
+
+      <SmoothScrollProvider />
     </div>
   );
 }
