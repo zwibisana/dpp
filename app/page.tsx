@@ -3,6 +3,8 @@ import { useRef } from "react";
 import Introduction from "./components/Introduction";
 import Cards from "./components/Cards";
 import KaredokRecipe from "./components/KaredokRecipe";
+import NasiGorengRecipe from "./components/NasiGorengRecipe";
+import SmoothScrollProvider from "./components/SmoothScrollProvider";
 
 export default function Home() {
   const redRef = useRef<HTMLDivElement>(null);
@@ -32,9 +34,15 @@ export default function Home() {
         <Cards/>
       </div>
 
-      <div className="relative z-30 min-h-svh text-white">
-        <KaredokRecipe/>
+      <div className="relative top-0 z-30 min-h-svh text-white">
+        <KaredokRecipe />
       </div>
+
+      <div className="relative top-0 z-40 min-h-svh text-white">
+        <NasiGorengRecipe />
+      </div>
+
+      <SmoothScrollProvider/>
     </div>
   );
 }

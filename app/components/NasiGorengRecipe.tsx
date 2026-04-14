@@ -142,9 +142,30 @@ function ScrollableInstructions({
     }
   };
 
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      const { scrollTop, scrollHeight, clientHeight } = el;
+      const epsilon = 2;
+      const atBottom =
+        scrollTop + clientHeight >= scrollHeight - epsilon;
+      const atTop = scrollTop <= epsilon;
+
+      if ((atBottom && e.deltaY > 0) || (atTop && e.deltaY < 0)) {
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY, behavior: "auto" });
+      }
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
   return (
     <div
-      className="bg-[#f9f7ea] flex-[1_0_0] h-screen min-h-px min-w-px overflow-y-auto"
+      className="bg-[#f9f7ea] flex-[1_0_0] h-screen min-h-px min-w-px overflow-y-auto overscroll-y-auto"
       data-name="SCROLLABLE INSTRUCTIONS"
       ref={scrollRef}
       onScroll={handleScroll}
@@ -156,7 +177,7 @@ function ScrollableInstructions({
   );
 }
 
-export default function KaredokRecipe() {
+export default function NasiGorengRecipe() {
   const [rotation, setRotation] = useState(-155.38);
 
   const handleScroll = (
