@@ -50,17 +50,20 @@ export default function Home() {
         <KolakBijiSalakRecipe />
       </div>
 
-      <div className="text-[#F9F7EA] relative z-60 flex justify-center py-30 bg-[#E74822] overflow-hidden">
+      <div className="text-[#F9F7EA] relative z-60 flex justify-center py-30 bg-[#D83B18] overflow-hidden">
         <div className="flex flex-col gap-y-4">
-          <h3 className="font-discordia font-bold uppercase tracking-[5]">Looking for more?</h3>
-          <p className="font-polymath">Email zahrawibisana@gmail.com with any questions!</p>
+          <h3 className="font-discordia font-bold uppercase tracking-[5]">
+            Looking for more?
+          </h3>
+          <p className="font-polymath">
+            Email{" "}
+            <a className="hover:text-[#F4C3B7] underline underline-offset-4 font-bold" href="mailto:zahrawibisana@gmail.com">zahrawibisana@gmail.com</a>{" "}
+            with any questions!
+          </p>
         </div>
-        <div
-        className="absolute"
-        data-name="Vector"
-      >
-        <Batik />
-      </div>
+        <div className="pointer-events-none absolute" data-name="Vector">
+          <Batik />
+        </div>
       </div>
 
       <SmoothScrollProvider />

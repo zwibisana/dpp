@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Cards() {
   return (
-    <div className="content-stretch flex flex-col items-start relative size-full font-discordia bg-[#E74822] text-[#F9F7EA] text-[16px] px-100 py-20 gap-y-4 w-full min-h-svh relative">
+    <div className="line-height content-stretch flex flex-col items-start relative size-full font-discordia bg-[#D83B18] text-[#F9F7EA] text-[16px] text-base/7 px-100 pt-20 pb-40 gap-y-5 w-full min-h-svh relative">
       <Image
         src="/Family.png"
         alt="a picture of my family walking with our hands together"
@@ -10,7 +10,7 @@ export default function Cards() {
         height={280}
         className="object-cover pb-10"
       />
-      <div className="font-discordia font-italic">
+      <div className="text-[20px] font-discordia italic">
         <h1>Introduction</h1>
       </div>
       <div>
@@ -53,19 +53,25 @@ export default function Cards() {
       </div>
       <div>
         At nineteen, I was left wondering about the things he had not yet told
-        me. What stories had he been saving? What pieces of our family history
-        disappeared with him? For a moment, my world tilted and all I could do
-        was continue moving forward while learning how to live within the circle
-        of grief that surrounded me.
+        me.{" "}
+        <mark className="text-[#F9F7EA] italic bg-transparent">
+          What stories had he been saving? What pieces of our family history
+          disappeared with him?
+        </mark>{" "}
+        For a moment, my world tilted and all I could do was continue moving
+        forward while learning how to live within the circle of grief that
+        surrounded me.
       </div>
       <div>
         In the months that followed, I found myself thinking often about
         identity. Beyond the lessons my father had already given me, I wondered
-        who came before him and before me. Who were my ancestors? What lives had
-        they lived across Indonesia? Many of these questions remained
-        unanswered, but they stayed with me, permeating through the way I began
-        to look at the traditions that had existed around me unnoticed my whole
-        life.
+        who came before him and before me.{" "}
+        <mark className="text-[#F9F7EA] italic bg-transparent">
+          Who were my ancestors? What lives had they lived across Indonesia?
+        </mark>{" "}
+        Many of these questions remained unanswered, but they stayed with me,
+        permeating through the way I began to look at the traditions that had
+        existed around me unnoticed my whole life.
       </div>
       <div>
         Food became one of the clearest ways to begin understanding that
@@ -85,7 +91,12 @@ export default function Cards() {
         often requires sourcing ingredients themselves or adapting recipes in
         ways that still preserve their character. Within Indonesian communities
         abroad, spaces such as pengajians, or religious study gatherings, have
-        consistently attempted to preserve that character.
+        consistently attempted to preserve that character. I grew up coming to
+        these gatherings every weekend, which brought families together not only
+        for faith, but also for language, conversation, and the foods that carry
+        this shared memory. In these spaces, Indonesian cuisine is exchanged,
+        traditions are practiced, and culture continues to live through and
+        across generations.
       </div>
       <Image
         src="/Pengajian.png"
@@ -95,14 +106,10 @@ export default function Cards() {
         className="object-cover py-10"
       />
       <div>
-        These gatherings bring families together not only for faith, but also
-        for language, conversation, and the foods that carry this shared memory.
-        In these spaces, recipes are exchanged, traditions are practiced, and
-        culture continues to live through and across generations. This project
-        is a small reflection of that continuity. While it serves as a simple
-        introduction, it is also an attempt to share the flavors and traditions
-        that shaped my family and my own upbringing, offering an accessible
-        doorway into the depth of Indonesian cuisine.
+        This project is a small reflection of that continuity. While it serves
+        as a simple introduction, it is also an attempt to share the flavors and
+        traditions that shaped my family and my own upbringing, offering an
+        accessible doorway into the depth of Indonesian cuisine.
       </div>
     </div>
   );
