@@ -6,6 +6,7 @@ import KaredokRecipe from "./components/KaredokRecipe";
 import NasiGorengRecipe from "./components/NasiGorengRecipe";
 import KolakBijiSalakRecipe from "./components/KolakBijiSalakRecipe";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
+import Batik from "@/public/Batik";
 
 export default function Home() {
   const redRef = useRef<HTMLDivElement>(null);
@@ -37,16 +38,29 @@ export default function Home() {
       </div>
 
       {/* KaredokRecipe sticks and slides up over Cards */}
-      <div className="sticky top-0 z-30 h-svh text-white">
+      <div className="relative top-0 z-30 h-full text-white">
         <KaredokRecipe />
       </div>
 
-      <div className="sticky top-0 z-40 h-svh text-white">
+      <div className="relative top-0 z-40 h-full text-white">
         <NasiGorengRecipe />
       </div>
 
-      <div className="sticky top-0 z-50 h-svh text-white">
+      <div className="relative top-0 z-50 h-full text-white">
         <KolakBijiSalakRecipe />
+      </div>
+
+      <div className="text-[#F9F7EA] relative z-60 flex justify-center py-30 bg-[#E74822] overflow-hidden">
+        <div className="flex flex-col gap-y-4">
+          <h3 className="font-discordia font-bold uppercase tracking-[5]">Looking for more?</h3>
+          <p className="font-polymath">Email zahrawibisana@gmail.com with any questions!</p>
+        </div>
+        <div
+        className="absolute"
+        data-name="Vector"
+      >
+        <Batik />
+      </div>
       </div>
 
       <SmoothScrollProvider />

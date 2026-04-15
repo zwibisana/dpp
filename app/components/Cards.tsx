@@ -10,6 +10,9 @@ export default function Cards() {
         height={280}
         className="object-cover pb-10"
       />
+      <div className="font-discordia font-italic">
+        <h1>Introduction</h1>
+      </div>
       <div>
         I was born and raised in Baltimore, Maryland. My parents were born in
         Indonesia, a country in Southeast Asia.
